@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepyhouse Design - Portfolio</title>
+    <link rel="stylesheet" href="portfoliostyle.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="StarLogo.png" alt="Your Logo" />
+    </div>
+    <div class="headline">
+        <h1>SLEEPYHOUSE GRAPHIC DESIGN</h1>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="sleepyhouse.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="featured-work">
+        <img src="S1.png" alt="Featured Work" class="featured-image">
+        <div class="featured-overlay">
+            <h2>Make Your Ideas a Reality!</h2>
+        </div>
+    </section>
+
+
+<div class="portfolio-grid">
+    <div class="portfolio-item">
+        <a href="item1.html">
+            <img src="demon.png" alt="Portfolio Image 1">
+            <div class="overlay">
+                <h2>Speed Demon - Personal Project</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item2.html">
+            <img src="hightimes.png" alt="Portfolio Image 2">
+            <div class="overlay">
+                <h2>High Times - Personal Project</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item3.html">
+            <img src="poison.png" alt="Portfolio Image 3">
+            <div class="overlay">
+                <h2>Pick Your Poison - Personal Project</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item4.html">
+            <img src="flyer1.png" alt="Portfolio Image 4">
+            <div class="overlay">
+                <h2>3rd & Lindsley - Flyer</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item5.html">
+            <img src="ARS.png" alt="Portfolio Image 5">
+            <div class="overlay">
+                <h2>Atlanta Rhythm Section - Flyer</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item6.html">
+            <img src="Veterans.png" alt="Portfolio Image 6">
+            <div class="overlay">
+                <h2>Veterans Show - Flyer</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item7.html">
+            <img src="retrograde1.png" alt="Portfolio Image 7">
+            <div class="overlay">
+                <h2>Fire Betty's - Flyer</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item8.html">
+            <img src="retrograde2.png" alt="Portfolio Image 8">
+            <div class="overlay">
+                <h2>The Hummingbird - Flyer</h2>
+            </div>
+        </a>
+    </div>
+    <div class="portfolio-item">
+        <a href="item9.html">
+            <img src="vaquero.png" alt="Portfolio Image 9">
+            <div class="overlay">
+                <h2>O'basso Vaquero - Merch Graphic</h2>
+            </div>
+        </a>
+    </div>
+</div>
+
+</main>
+<script>
+$(document).ready(function() {
+    const featuredImages = [
+        "S1.png",
+        "S2.png",
+        "S3.png"
+    ];
+
+    let currentIndex = 0; 
+    const changeInterval = 2500;
+
+    $.each(featuredImages, function(index, src) {
+        $('<img/>')[0].src = src;
+    });
+
+    $('.featured-image').attr('src', featuredImages[currentIndex]).addClass('show');
+    function rotateImage() {
+        $('.featured-image').removeClass('show');
+        currentIndex = (currentIndex + 1) % featuredImages.length;
+
+        $('.featured-image').attr('src', featuredImages[currentIndex]).addClass('show');
+    }
+
+    setInterval(rotateImage, changeInterval);
+});
+</script>
+
+</body>
+</html>
